@@ -1,0 +1,25 @@
+spring:
+  jpa:
+    database: oracle
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  datasource:
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@localhost:1521:xe
+    username: system
+    password: oracle
+
+
+  application:
+    name: eurekaclient
+  profiles:
+    active: development
+server:
+  port: 9999
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+  instance:
+    preferIpAddress: true
